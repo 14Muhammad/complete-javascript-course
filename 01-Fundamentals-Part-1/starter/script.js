@@ -32,6 +32,35 @@ console.log(array1)
 
 /***************************************************************
  *
- *
- *
+ * 2. Explain Hoisting in javascript.
+ * Hoisting is the default behaviour of javascript
+ * where all the variable and function declarations are moved on top.
  ***************************************************************** */
+
+hoistedVariable = 3;
+console.log(hoistedVariable); // outputs 3 even when the variable is declared after it is initialized
+var hoistedVariable;
+
+
+hoistedFunction();  // Outputs " Hello world! " even when the function is declared after calling
+function hoistedFunction(){
+    console.log(" hoistedFunction()");
+}
+
+// Hoisting takes place in the local scope as well
+function doSomething(){
+    x = 33;
+    console.log(x  + " doSomething() ");
+    var x;
+}
+doSomething();
+
+//Note - Variable initializations are not hoisted, only variable declarations are hoisted:
+var xh;
+console.log("xh = "+xh); // Outputs "undefined" since the initialization of "x" is not hoisted
+xh = 23;
+
+
+xh1 = 23; // Gives an error since 'x' is not declared
+console.log("xh1-> "+xh1);
+var xh1;
