@@ -181,6 +181,7 @@ console.log(z); //prints 300
 
 //Predict the output of the following code:
 
+/*
 var a = 10;
 {
     var a = -10;
@@ -191,3 +192,62 @@ let b = a;
 }
 
 console.log(b)
+*/
+
+
+/***************************************************************
+ *
+ * 4. Explain Implicit Type Coercion in javascript.
+ ***************************************************************** */
+/*
+
+var x = 3;
+var y = "3";
+var z = x + y;
+console.log(z);
+*/
+
+
+//All values except false, 0, 0n, -0, “”, null, undefined, and NaN are truthy values.
+
+/*
+var x = 0;
+var y = NaN;
+
+if(x) { console.log(x) }   // The code inside this block will not run since the value of x is 0(Falsy)
+
+if(y) { console.log(y) }    // The code inside this block will run since the value of y is 23 (Truthy)
+*/
+
+/*
+* Logical operators:
+Logical operators in javascript, unlike operators in other programming languages, do not return true or false.
+* They always return one of the operands.
+
+OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.
+
+AND ( && ) operator - If both the values are truthy, always the second value is returned. If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
+*
+* */
+
+var x = 220;
+var y = "Hello";
+var z = undefined;
+
+console.log(x || y); // Returns 220 since the first value is truthy
+console.log(x || z);  // Returns 220 since the first value is truthy
+
+console.log(x && y);    // Returns "Hello" since both the values are truthy
+
+console.log(z && z);   // Returns undefined since the second value is falsy
+
+console.log(z && y);
+
+if( x && y ){
+    console.log("Code runs" ); // This block runs because x && y returns "Hello" (Truthy)
+}
+
+if( x || z ){
+    console.log("Code runs");  // This block runs because x || y returns 220(Truthy)
+}
+
