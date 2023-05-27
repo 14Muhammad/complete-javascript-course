@@ -1,4 +1,4 @@
-"use strict";
+
 /***************************************************************
  * https://www.interviewbit.com/javascript-interview-questions/
  *
@@ -331,4 +331,18 @@ console.log(obj2);
 })();
 */
 
+"use strict";
+(function NaN()
+{
+/*    var y = 3.14;
+    console.log(y);
+    let eval = 3.14;
+    console.log(eval);
+    */
 
+/*    let x = 222;
+    console.log(x);
+    delete x;
+    console.log(x);
+    */
+})();
