@@ -319,3 +319,16 @@ console.log(obj2);
 //From the above example, we can see that while passing non-primitive data types, the assign operator directly passes the address (reference).
 //  Therefore, non-primitive data types are always passed by reference.
 */
+/***************************************************************
+ *
+ * 7. What is an Immediately Invoked Function in JavaScript?
+ * An Immediately Invoked Function ( known as IIFE and pronounced as IIFY) is a function that runs as soon as it is defined.
+ ***************************************************************** */
+
+/*
+(function (){
+    console.log("IIFE means Immediately Invoked Function Expression")
+})();
+*/
+
+
