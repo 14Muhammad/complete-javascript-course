@@ -230,7 +230,7 @@ AND ( && ) operator - If both the values are truthy, always the second value is 
 *
 * */
 
-var x = 220;
+/*var x = 220;
 var y = "Hello";
 var z = undefined;
 
@@ -249,5 +249,26 @@ if( x && y ){
 
 if( x || z ){
     console.log("Code runs");  // This block runs because x || y returns 220(Truthy)
-}
+}*/
+
+
+/***************************************************************
+ *
+ * 5. What is NaN property in JavaScript?
+ * NaN property represents the “Not-a-Number” value. It indicates a value that is not a legal number.
+ *
+ * typeof of NaN will return a Number.
+ *
+ * To check if a value is NaN, we use the isNaN() function,
+ *
+ * Note- isNaN() function converts the given value to a Number type, and then equates to NaN.
+ ***************************************************************** */
+/*
+console.log(isNaN("Hello"))
+console.log(isNaN(345))
+console.log(isNaN('1'))
+console.log(isNaN(true))
+console.log(isNaN(false))
+console.log(isNaN(undefined))
+*/
 
