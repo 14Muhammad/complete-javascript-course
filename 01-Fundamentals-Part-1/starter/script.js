@@ -330,19 +330,52 @@ console.log(obj2);
     console.log("IIFE means Immediately Invoked Function Expression")
 })();
 */
+/***************************************************************
+ *
+ * 8. strict mode in javascript and characteristics of javascript strict-mode
+ ***************************************************************** */
+
+/*
 
 "use strict";
 (function NaN()
 {
-/*    var y = 3.14;
+/!*    var y = 3.14;
     console.log(y);
     let eval = 3.14;
     console.log(eval);
-    */
+    *!/
 
-/*    let x = 222;
+/!*    let x = 222;
     console.log(x);
     delete x;
     console.log(x);
-    */
+    *!/
 })();
+
+*/
+/***************************************************************
+ *
+ * 9. Explain Higher Order Functions in javascript.
+ * Functions that operate on other functions, either by taking them as arguments or by returning them, are called higher-order functions.
+ *
+ * Higher-order functions are a result of functions being first-class citizens in javascript.
+ ***************************************************************** */
+
+/*
+function higherOrder(fn) {
+    fn();
+}
+
+higherOrder(function() { console.log("Hello world") });
+
+
+function higherOrder2() {
+    return function() {
+        return "Do something";
+    }
+}
+var x = higherOrder2();
+console.log(x());   // Returns "Do something"
+*/
+
