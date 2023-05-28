@@ -522,6 +522,7 @@ console.log(detailsOfPerson1());
  * We will use a test () to find a string for a specific pattern. It will return the Boolean value 'true' on finding the given text otherwise, it will return 'false'.
  ***************************************************************** */
 
+/*
 (function findMatch() {
     let text = "The best things in life are free";
     let result = /ee/.exec(text);
@@ -529,3 +530,18 @@ console.log(detailsOfPerson1());
     console.log(result);
     console.log(result2);
 })();
+*/
+
+/***************************************************************
+ *
+ * 14.  What is currying in JavaScript?
+ * Currying is an advanced technique to transform a function of arguments n, to n functions of one or fewer arguments.
+ ***************************************************************** */
+
+function add (a) {
+    return function(b){
+        return a + b;
+    }
+}
+
+console.log(add(3)(4));
