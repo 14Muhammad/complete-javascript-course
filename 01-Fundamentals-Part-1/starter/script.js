@@ -437,7 +437,9 @@ obj2.getAddress();
  *
  * 11.  Self Invoking Functions?
  ***************************************************************** */
-
+(function () {
+    document.getElementsByTagName("h1")[0].innerHTML = "Hi! I am calling myself";
+})();
 /***************************************************************
  *
  * 12.  call(), apply() and, bind() methods
@@ -493,6 +495,7 @@ console.log(saySomething.apply(person4, ["awesome"]));
 //This method returns a new function, where the value of “this” keyword will be bound to the owner object, which is provided as a parameter.
 //  Example with arguments:
 
+/*
 var bikeDetails = {
     displayDetails: function(registrationNumber,brandName){
         return this.name+ " , "+ "bike details: "+ registrationNumber + " , " + brandName;
@@ -509,3 +512,4 @@ var detailsOfPerson1 = bikeDetails.displayDetails.bind(person1, "TS0122", "Bulle
 console.log(detailsOfPerson1());
 //Returns Vivek, bike details: TS0122, Bullet
 
+*/
