@@ -437,9 +437,9 @@ obj2.getAddress();
  *
  * 11.  Self Invoking Functions?
  ***************************************************************** */
-(function () {
+/*(function () {
     document.getElementsByTagName("h1")[0].innerHTML = "Hi! I am calling myself";
-})();
+})();*/
 /***************************************************************
  *
  * 12.  call(), apply() and, bind() methods
@@ -513,3 +513,19 @@ console.log(detailsOfPerson1());
 //Returns Vivek, bike details: TS0122, Bullet
 
 */
+/***************************************************************
+ *
+ * 13.  difference between exec () and test () methods in javascript
+ *
+ * test () and exec () are RegExp expression methods used in javascript.
+ * We'll use exec () to search a string for a specific pattern, and if it finds it, it'll return the pattern directly; else, it'll return an 'empty' result.
+ * We will use a test () to find a string for a specific pattern. It will return the Boolean value 'true' on finding the given text otherwise, it will return 'false'.
+ ***************************************************************** */
+
+(function findMatch() {
+    let text = "The best things in life are free";
+    let result = /ee/.exec(text);
+    let result2 = /ee/.test(text);
+    console.log(result);
+    console.log(result2);
+})();
