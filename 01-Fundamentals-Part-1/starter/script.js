@@ -379,3 +379,57 @@ var x = higherOrder2();
 console.log(x());   // Returns "Do something"
 */
 
+/***************************************************************
+ *
+ * 10. The “this” keyword refers to the object that the function is a property of.
+ *
+ * The value of the “this” keyword will always depend on the object that is invoking the function.
+ ***************************************************************** */
+
+/*
+
+function doSomething() {
+    console.log(this);
+}
+
+doSomething();
+
+*/
+
+/*
+var obj = {
+    name:  "vivek",
+    getName: function(){
+        return this.name;
+    }
+}
+
+console.log(obj.getName());
+*/
+
+
+/*
+var obj = {
+    name:  "vivek",
+    getName: function(){
+        console.log(this.name);
+    }
+}
+
+var getName = obj.getName;
+var obj2 = {name:"akshay", getName };
+obj2.getName();
+*/
+/*
+var obj1 = {
+    address : "Mumbai,India",
+    getAddress: function(){
+        console.log(this.address);
+    }
+}
+
+var getAddress = obj1.getAddress;
+var obj2 = {name:"akshay"};
+obj2.getAddress();
+*/
+
