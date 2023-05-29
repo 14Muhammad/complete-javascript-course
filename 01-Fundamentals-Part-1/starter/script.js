@@ -537,11 +537,61 @@ console.log(detailsOfPerson1());
  * 14.  What is currying in JavaScript?
  * Currying is an advanced technique to transform a function of arguments n, to n functions of one or fewer arguments.
  ***************************************************************** */
-
+/*
 function add (a) {
     return function(b){
-        return a + b;
+	return function (c){
+        	return a + b + c;
+	}
     }
 }
 
-console.log(add(3)(4));
+console.log(add(3)(4)(3));
+
+
+function multiply(a,b){
+	return a*b;
+}
+
+function currying(fn){
+	return function(a){
+		return function(b){
+			return fn(a,b);
+		}
+	}
+}
+
+var curriedMultiply = currying(multiply);
+console.log(multiply(4,3));
+console.log(curriedMultiply(4)(3));
+*/
+
+
+
+//another example
+
+function product(a,b){
+	return a*b;
+}
+function add(a,b){
+	return a+b;
+}
+function divide(a,b){
+	return a/b;
+}
+function sub(a,b){
+	return a-b;
+}
+function op(operation){
+	return function(a){
+		return function(b){
+			return operation(a,b);
+		}
+	}
+}
+
+console.log("->" + op(product)(100)(2));
+console.log("->" + op(add)(100)(2));
+console.log("->" + op(divide)(100)(2));
+console.log("->" + op(sub)(100)(2));
+
