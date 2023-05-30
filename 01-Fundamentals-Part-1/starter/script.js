@@ -678,6 +678,50 @@ favFunction();
 
 /***************************************************************
  *
+ * 15.  Recursion in JS
+ ***************************************************************** */
+ /*
+ function sum(n){
+	return n<=0?0:n+sum(n-1);
+ }
+ console.log(sum(6));
+ console.log(arrSum([1,3,6,8]));
+
+ function arrSum(arr){
+	return arr.length === 1 ? arr[0] : arr.pop() + arrSum(arr);
+ }
+ */
+ /***************************************************************
+ *
+ * 15.  Memoization in JS
+ ***************************************************************** */
+
+ function memoFunc(){
+	 var cache = {};
+	 return function(n){
+		if(n in cache){
+			console.log("cached Value");
+			return cache[n];
+		}
+		else {
+			cache[n] = n + 256;
+			return cache[n];
+			}
+	 }
+ }
+
+ var memo1 = memoFunc();
+
+ console.log(memo1(20));
+ console.log(memo1(34));
+ console.log(memo1(35));
+ console.log(memo1(20));
+ console.log(memo1(35));
+
+
+
+/***************************************************************
+ *
  * 16.Closures in JavaScript.
  * Closures are an ability of a function to remember the variables and functions that are declared in its outer scope.
  *
