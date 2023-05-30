@@ -765,6 +765,7 @@ initialiseClosure();
  * If we want to create multiple objects having similar properties and methods, constructor functions are used.
  * Note- The name of a constructor function should always be written in Pascal Notation: every word should start with a capital letter.
  * ***************************************************************** */
+/*
 function Person(name, age, gender){
     this.name = name;
     this.age = age;
@@ -776,3 +777,126 @@ var p2 = new Person("Sadia", 33, "Female");
 
 console.log(p1);
 console.log(p2);
+console.log(p2.name.charAt(3));
+console.log(p2.name);
+
+console.log(window.location)
+console.log(window.document)
+console.log(window.history)
+console.log(window)*/
+
+/***************************************************************
+/***************************************************************
+/***************************************************************
+ *
+ * 18. Arrow functions in JS
+ * Arrow functions were introduced in the ES6 version of javascript.
+ * They provide us with a new and shorter syntax for declaring functions. Arrow functions can only be used as a function expression.
+ *
+ * Arrow functions are declared without the function keyword. If there is only one returning expression
+ * then we don’t need to use the return keyword as well in an arrow function as shown in the example above.
+ * Also, for functions having just one line of code, curly braces { } can be omitted.
+ * ***************************************************************
+ * ***************************************************************
+ * ***************************************************************/
+/*
+// Traditional Function Expression
+var add = function(a,b){
+    return a + b;
+}
+
+var addArrow = (a,b) => a+b;
+console.log(addArrow(2,3));
+// Traditional function expression
+var multiplyBy2 = function(num){
+    return num * 2;
+}
+// Arrow function expression
+var arrowMultiplyBy2 = num => num * 2;
+//If the function takes in only one argument, then the parenthesis () around the parameter can be omitted as shown in the code above.
+*/
+/*
+var obj1 = {
+    name: "Ali",
+    valueOfThis: function(){
+        return this;
+    }
+}
+var obj2 = {
+    valueOfThis: ()=>{
+        return this;
+    }
+}
+
+console.log(obj1.valueOfThis()); // Will return the object obj1
+console.log(obj2.valueOfThis()); // Will return window/global object
+*/
+
+//The biggest difference between the traditional function expression and the arrow function is the handling of this keyword.
+// By general definition, this keyword always refers to the object that is calling the function.
+// As you can see in the code above, obj1.valueOfThis() returns obj1 since this keyword refers to the object calling the function.
+//
+// In the arrow functions, there is no binding of this keyword.
+// This keyword inside an arrow function does not refer to the object calling it.
+// It rather inherits its value from the parent scope which is the window object in this case.
+// Therefore, in the code above, obj2.valueOfThis() returns the window object.
+
+/***************************************************************
+ *
+ * 19. declaring variables using var, let and const.
+ * ***************************************************************** */
+
+
+/*
+var variable1 = 23;
+
+let variable2 = 89;
+
+function catchValues(){
+    console.log(variable1);
+    console.log(variable2);
+
+// Both the variables can be accessed anywhere since they are declared in the global scope
+}
+
+window.variable1; // Returns the value 23
+
+window.variable2; // Returns undefined
+
+{
+    var variable3 = [1, 2, 3, 4];
+}
+
+console.log(variable3); // Outputs [1,2,3,4]
+
+{
+    let variable4 = [6, 55, -1, 2];
+}
+
+console.log(variable4); // Throws error
+
+for(let i = 0; i < 2; i++){
+    //Do something
+}
+
+console.log(i); // Throws error
+
+for(var j = 0; j < 2; i++){
+    // Do something
+}
+
+console.log(j) // Outputs 2
+*/
+
+/*
+const x = {name:"Vivek"};
+
+x = {address: "India"}; // Throws an error
+
+x.name = "Nikhil"; // No error is thrown
+
+const y = 23;
+
+y = 44; // Throws an error
+*/
+
