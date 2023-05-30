@@ -675,3 +675,19 @@ favFunction();
 
 //As you can see in the code above, if the javascript engine does not find the variable in local scope, it tries to check for the variable in the outer scope. If the variable //does not exist in the outer scope, it tries to find the variable in the global scope.
 //If the variable is not found in the global space as well, a reference error is thrown.
+
+/***************************************************************
+ *
+ * 15.  Recursion in JS
+ ***************************************************************** */
+ 
+ function sum(n){
+	return n<=0?0:n+sum(n-1);
+ }
+ console.log(sum(6));
+ console.log(arrSum([1,3,6,8]));
+ 
+ function arrSum(arr){
+	return arr.length === 1 ? arr[0] : arr.pop() + arrSum(arr);
+ }
+ 
