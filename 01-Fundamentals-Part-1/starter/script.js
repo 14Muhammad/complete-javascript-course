@@ -696,6 +696,7 @@ favFunction();
  * 15.  Memoization in JS
  ***************************************************************** */
 
+/*
  function memoFunc(){
 	 var cache = {};
 	 return function(n){
@@ -717,6 +718,7 @@ favFunction();
  console.log(memo1(35));
  console.log(memo1(20));
  console.log(memo1(35));
+*/
 
 
 
@@ -727,6 +729,8 @@ favFunction();
  *
  *
  * ***************************************************************** */
+/*
+
 var person = function (x){
     var name = x;
     this.getName = function (){
@@ -737,7 +741,6 @@ var person = function (x){
 var p1 = new person("ALII");
 console.log(p1.getName());
 
-
 function randomFunc(){
     var obj1 = {name:"Vivian", age:45};
 
@@ -746,10 +749,30 @@ function randomFunc(){
 
     }
 }
-
 var initialiseClosure = randomFunc(); // Returns a function
 
 initialiseClosure();
-//Therefore randomFunc(), instead of destroying the value of obj1 after execution, saves the value in the memory for further reference. This is the reason why the returning function is able to use the variable declared in the outer scope even after the function is already executed.
-//
+*/
+//Therefore randomFunc(), instead of destroying the value of obj1 after execution, saves the value in the memory for further reference.
+// This is the reason why the returning function is able to use the variable declared in the outer scope even after the function is already executed.
 // This ability of a function to store a variable for further reference even after it is executed is called Closure.
+
+/***************************************************************
+ *
+ * 17. constructor function in javascript
+ * Constructor functions are used to create objects in javascript.
+ * When do we use constructor functions?
+ * If we want to create multiple objects having similar properties and methods, constructor functions are used.
+ * Note- The name of a constructor function should always be written in Pascal Notation: every word should start with a capital letter.
+ * ***************************************************************** */
+function Person(name, age, gender){
+    this.name = name;
+    this.age = age;
+    this.gender = gender;
+}
+
+var p1 = new Person("Ali", 32, "Male");
+var p2 = new Person("Sadia", 33, "Female");
+
+console.log(p1);
+console.log(p2);
