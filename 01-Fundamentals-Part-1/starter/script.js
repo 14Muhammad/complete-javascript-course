@@ -1036,7 +1036,7 @@ In the function below, we are returning a promise inside a function:
 Introduced in the ES6 version, classes are nothing but syntactic sugars for constructor functions. They provide a new way of declaring constructor functions in javascript.  Below are the examples of how classes are declared and used:
 
  * ***************************************************************** */
-"use strict";
+
 /*
 // Before ES6 version, using constructor functions
 function Student(name,rollNumber,grade,section){
@@ -1082,3 +1082,59 @@ console.log(student2.getDetails());
 //Unlike functions, classes are not hoisted. A class cannot be used before it is declared.
 //A class can inherit properties and methods from other classes by using the extend keyword.
 //All the syntaxes inside the class must follow the strict mode(‘use strict’) of javascript. An error will be thrown if the strict mode rules are not followed.
+
+ /***************************************************************
+ *
+ * 21. generator functions
+Introduced in the ES6 version, generator functions are a special class of functions.
+
+They can be stopped midway and then continue from where they had stopped.
+
+Generator functions are declared with the function* keyword instead of the normal function keyword:
+
+function* genFunc(){
+  // Perform operation
+}
+In the case of generator functions, when called, they do not execute the code, instead, they return a generator object. 
+This generator object handles the execution.
+ * ***************************************************************** */
+ /*
+ function* genFunc(){
+  yield 3;
+  yield 4;
+}
+let fun = genFunc();
+console.log(fun); // Returns Object [Generator] {}
+console.log(fun.next()); // Returns {value: 3, done: false}
+console.log(fun.next()); // Returns {value: 4, done: false}
+console.log(fun.next()); // Returns {value: undefined, done: true}
+*/
+
+/*
+The generator object consists of a method called next(), this method when called, executes the code until the nearest yield statement, and returns the yield value.
+
+For example, if we run the next() method on the above code:
+
+genFunc().next(); // Returns {value: 3, done:false}
+As one can see the next method returns an object consisting of a value and done properties.  Value property represents the yielded value. Done property tells us whether the function code is finished or not. (Returns true if finished).
+
+Generator functions are used to return iterators. Let’s see an example where an iterator is returned:
+
+*/
+/*
+function* iteratorFunc(){
+	let count=0;
+	for(let i=0;i<2;i++){
+		count++;
+		yield i;
+	}
+	return count;
+}
+let iterator = iteratorFunc();
+console.log(iterator.next());// {value:0,done:false}
+console.log(iterator.next());// {value:1,done:false}
+console.log(iterator.next());// {value:2,done:true}
+
+*/
+//As you can see in the code above, the last line returns done:true, 
+//since the code reaches the return statement.
