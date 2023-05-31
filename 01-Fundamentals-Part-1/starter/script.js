@@ -970,7 +970,7 @@ console.log(mergedObj);
 // Rest parameter is used in function declaration whereas the spread operator is used in function calls.
 /***************************************************************
  *
- * 12. use of promises in javascript
+ * 20. use of promises in javascript
  Promises are used to handle asynchronous operations in javascript.
 
 Before promises, callbacks were used to handle asynchronous operations. But due to the limited functionality of callbacks, 
@@ -999,7 +999,7 @@ In the function below, we are returning a promise inside a function:
 
 
  * ***************************************************************** */
- 
+ /*
  function sumOfThreeElements(...args){
 	 return new Promise((resolve,reject)=>{
 		 if(args.length>3){
@@ -1027,3 +1027,58 @@ In the function below, we are returning a promise inside a function:
  sumOfThreeElements(4,1,300)
  .then(result=>console.info(result))
  .catch(e=>console.error(e));
+ */
+ 
+ 
+ /***************************************************************
+ *
+ * 21. classes in javascript
+Introduced in the ES6 version, classes are nothing but syntactic sugars for constructor functions. They provide a new way of declaring constructor functions in javascript.  Below are the examples of how classes are declared and used:
+
+ * ***************************************************************** */
+"use strict";
+/*
+// Before ES6 version, using constructor functions
+function Student(name,rollNumber,grade,section){
+  this.name = name;
+  this.rollNumber = rollNumber;
+  this.grade = grade;
+  this.section = section;
+}
+
+// Way to add methods to a constructor function
+Student.prototype.getDetails = function(){
+  return `Name: ${this.name}, Roll no: ${this.rollNumber}, Grade: ${this.grade}, Section:${this.section}`;
+}
+
+
+let student1 = new Student("Vivek", 354, "6th", "A");
+console.log(student1.getDetails());
+// Returns Name: Vivek, Roll no:354, Grade: 6th, Section:A
+
+*/
+
+// ES6 version classes
+/*
+class Student{
+	constructor(name, rollNumber, grade, section){
+		this.name = name;
+		this.rollNumber = rollNumber;
+		this.grade = grade;
+		this.section = section;
+	}
+	
+	// Methods can be directly added inside the class
+	getDetails(){
+		return `Name: ${this.name}, Roll Number: ${this.rollNumber}, Grade:${this.grade}, Section:${this.section}`;
+	}
+}
+
+let student2 = new Student("Ali", 333, "12th", "C");
+console.log(student2.getDetails());
+*/
+//Key points to remember about classes:
+
+//Unlike functions, classes are not hoisted. A class cannot be used before it is declared.
+//A class can inherit properties and methods from other classes by using the extend keyword.
+//All the syntaxes inside the class must follow the strict mode(‘use strict’) of javascript. An error will be thrown if the strict mode rules are not followed.
