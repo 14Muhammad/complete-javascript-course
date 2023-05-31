@@ -968,3 +968,62 @@ console.log(mergedObj);
 // Note- Key differences between rest parameter and spread operator:
 // Rest parameter is used to take a variable number of arguments and turns them into an array while the spread operator takes an array or an object and spreads it
 // Rest parameter is used in function declaration whereas the spread operator is used in function calls.
+/***************************************************************
+ *
+ * 12. use of promises in javascript
+ Promises are used to handle asynchronous operations in javascript.
+
+Before promises, callbacks were used to handle asynchronous operations. But due to the limited functionality of callbacks, 
+using multiple callbacks to handle asynchronous code can lead to unmanageable code.
+
+Promise object has four states -
+
+Pending - Initial state of promise. This state represents that the promise has neither been fulfilled nor been rejected, 
+it is in the pending state.
+Fulfilled - This state represents that the promise has been fulfilled, meaning the async operation is completed.
+Rejected - This state represents that the promise has been rejected for some reason, meaning the async operation has failed.
+Settled - This state represents that the promise has been either rejected or fulfilled.
+A promise is created using the Promise constructor which takes in a callback function with two parameters, 
+resolve and reject respectively.
+
+resolve is a function that will be called when the async operation has been successfully completed.
+
+reject is a function that will be called, when the async operation fails or if some error occurs.
+
+Example of a promise:
+
+Promises are used to handle asynchronous operations like server requests, 
+for ease of understanding, we are using an operation to calculate the sum of three elements.
+
+In the function below, we are returning a promise inside a function:
+
+
+ * ***************************************************************** */
+ 
+ function sumOfThreeElements(...args){
+	 return new Promise((resolve,reject)=>{
+		 if(args.length>3){
+			reject("Only Three Elements or Less are Allowed");
+		 }
+		 else{
+			 let sum =0;
+			 var i=0;
+			 while(i<args.length){
+				 sum += args[i];
+				 i++;
+			 }
+			 resolve("Sum: " + sum);
+		 }
+	 });
+	 
+ }
+ //In the code above, we are calculating the sum of three elements, if the length of the elements array is more than 3, 
+ //a promise is rejected, or else the promise is resolved and the sum is returned.
+//We can consume any promise by attaching then() and catch() methods to the consumer.
+//then() method is used to access the result when the promise is fulfilled.
+//catch() method is used to access the result/error when the promise is rejected. 
+//In the code below, we are consuming the promise:
+
+ sumOfThreeElements(4,1,300)
+ .then(result=>console.info(result))
+ .catch(e=>console.error(e));
